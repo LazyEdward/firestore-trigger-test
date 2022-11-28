@@ -22,7 +22,14 @@ You can find the supported providers on https://nodemailer.com/smtp/well-known/
 
 For using Gmail, you need to enable 2-Step-Verification and use App password, please refer to https://support.google.com/mail/answer/185833 on setting up App password
 
-## Run in Test Enviroment
+3. Deploy or run in test environment
+
+4. Create Collection with Collection Id _contact_, and add a new document contain field _email_ in type _string_
+
+You can add optional fields such as _name_, _phone_, _address_ in type _string_
+
+Email will be sent to receiver the email address is valid
+## Run in Test Environment
 
 Run the following command under _functions_ folder
 
