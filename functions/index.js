@@ -23,15 +23,23 @@ exports.sendEmailTrigger
 			console.log(JSON.stringify(data))
 
 			if(!data.email){
-				console.log("invaild contact")
+				console.log("Invaild Contact, contact email is missing")
 				return;
 			}
 
 			let {email, ...contactDetails} = data;
 
 			const contact = new Contact(email, contactDetails)
-			let res = await emailService.sendEmail(contact.email, contact.subject(), contact.textContent(), contact.htmlContent())
 
-			console.log(res)
+			try {
+				let res = await emailService.sendEmail(contact.email, contact.subject(), contact.textContent(), contact.htmlContent())
+				console.log(`Email sent to user: ${contact.email}`)
+			}
+			catch(e) {
+				console.log("Email Service Error")
+				console.log(e)
+			}
+
+
 		}
 	)
