@@ -4,7 +4,7 @@ A Firebase Function Trigger for sending email on Firestore document creation
 
 ## Getting started
 
-1. Please install all the dependencies with:
+1. Please install all the dependencies under _functions_ folder, with:
 
 ```shell
 npm install
